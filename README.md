@@ -1,1 +1,3 @@
-# yahoo_finance_scraping
+# Yahoo finance scraping
+
+run `python main.py`
