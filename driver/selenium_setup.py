@@ -25,6 +25,14 @@ class Driver:
             driver = webdriver.Chrome(
                 executable_path=f"{os.getcwd()}/driver/chromedriver.exe", chrome_options=options
             )
+        elif platform == 'darwin':
+            driver = webdriver.Chrome(
+                executable_path=f"{os.getcwd()}/driver/chromedriver_mac64", chrome_options=options
+            )
+        elif platform == 'linux' or platform == 'linux2':
+            driver = webdriver.Chrome(
+                executable_path=f"{os.getcwd()}/driver/chromedriver_linux64", chrome_options=options
+            )
         else:
-            driver = webdriver.Remote("http://chromedriver:4444/wd/hub", DesiredCapabilities.CHROME)
+            driver = webdriver.Chrome("http://chromedriver:4444/wd/hub", DesiredCapabilities.CHROME)
         return driver
